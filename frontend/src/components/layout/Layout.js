@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
+
+import classes from './Layout.module.css';
 
 import AuxW from '../../hoc/Auxw';
 
-const layout = (props) => {
-    return (
+const layout = (props) => (
     <AuxW>
         <div>Toolbar, Sidedraw, Backdrop</div>
-        <main>
+        <main className={classes.Content}>
             {props.children}
         </main>
     </AuxW>
-    );
-}
+);
+
 
 export default layout;
