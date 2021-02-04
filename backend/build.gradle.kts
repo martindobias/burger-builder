@@ -4,7 +4,7 @@ plugins {
 	id("org.springframework.boot") version "2.4.2"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("org.asciidoctor.convert") version "2.4.0"
-	kotlin("jvm") version "1.4.21-2"
+	kotlin("jvm") version "1.4.30"
 	kotlin("plugin.spring") version "1.4.21-2"
 	kotlin("plugin.jpa") version "1.4.21-2"
 }
