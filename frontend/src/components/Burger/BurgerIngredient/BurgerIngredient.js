@@ -4,7 +4,7 @@ import classes from './BurgerIngredient.module.css';
 import PropTypes from 'prop-types';
 
 class BurgerIngredient extends Component {
-    render = () => {
+    render() {
         let ingredient;
 
         switch (this.props.type) {

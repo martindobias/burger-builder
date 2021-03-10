@@ -4,7 +4,7 @@ import Auxw from '../hoc/Auxw';
 import Burger from '../components/Burger/Burger';
 
 class BurgerBuilder extends Component {
-    render = () => {
+    render() {
         return (
             <Auxw>
                 <Burger />
