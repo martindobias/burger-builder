@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.4.5"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	id("org.asciidoctor.convert") version "2.4.0"
+	id("org.asciidoctor.jvm.convert") version "3.3.2"
 	kotlin("jvm") version "1.5.0"
 	kotlin("plugin.spring") version "1.5.0"
 	kotlin("plugin.jpa") version "1.5.0"
@@ -54,18 +54,19 @@ tasks.withType<KotlinCompile> {
 val snippetsDir by extra {file("build/generated-snippets")}
 
 tasks.test {
+	dependsOn("copyWebApp")
 	outputs.dir(snippetsDir)
 }
 
 tasks.asciidoctor {
-	inputs.dir(snippetsDir)
 	dependsOn("test")
+	inputs.dir(snippetsDir)
 }
 
 tasks.register<Copy>("copyWebApp") {
+	dependsOn(":frontend:build")
 	from(file("$rootDir/frontend/build"))
 	into(file("$rootDir/backend/build/resources/main/static"))
-	dependsOn(":frontend:build")
 }
  
 tasks.named("bootJar") {
