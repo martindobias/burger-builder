@@ -6,7 +6,7 @@ plugins {
 	id("org.asciidoctor.jvm.convert") version "3.3.2"
 	kotlin("jvm") version "1.5.31"
 	kotlin("plugin.spring") version "1.5.30"
-	kotlin("plugin.jpa") version "1.5.30"
+	kotlin("plugin.jpa") version "1.5.31"
 }
 
 group = "cz.martindobias"
